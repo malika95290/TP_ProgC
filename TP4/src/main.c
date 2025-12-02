@@ -44,56 +44,44 @@ void exercice_4_1(void) {
     int num1, num2;
     char op;
 
-    printf("=== Exercice 4.1 - Calcul avec operateurs ===\n");
+    printf("=== Exercice 4.1 - Calcul avec operateurs ===\n\n");
+
     printf("Entrez num1 : ");
     if (scanf("%d", &num1) != 1) {
-        fprintf(stderr, "Entree invalide pour num1.\n");
+        fprintf(stderr, "Erreur : entrée invalide pour num1.\n");
         return;
     }
+
     printf("Entrez num2 : ");
     if (scanf("%d", &num2) != 1) {
-        fprintf(stderr, "Entree invalide pour num2.\n");
+        fprintf(stderr, "Erreur : entrée invalide pour num2.\n");
         return;
     }
+
     printf("Entrez l'operateur (+, -, *, /, %%, &, |, ~) : ");
     if (scanf(" %c", &op) != 1) {
-        fprintf(stderr, "Entree invalide pour l'operateur.\n");
+        fprintf(stderr, "Erreur : entrée invalide pour l'opérateur.\n");
         return;
     }
 
     int resultat;
     switch (op) {
-        case '+':
-            resultat = somme(num1, num2);
-            break;
-        case '-':
-            resultat = difference(num1, num2);
-            break;
-        case '*':
-            resultat = produit(num1, num2);
-            break;
-        case '/':
-            resultat = quotient(num1, num2);
-            break;
-        case '%':
-            resultat = modulo(num1, num2);
-            break;
-        case '&':
-            resultat = et(num1, num2);
-            break;
-        case '|':
-            resultat = ou(num1, num2);
-            break;
-        case '~':
-            resultat = negation(num1, num2);
-            break;
+        case '+': resultat = somme(num1, num2); break;
+        case '-': resultat = difference(num1, num2); break;
+        case '*': resultat = produit(num1, num2); break;
+        case '/': resultat = quotient(num1, num2); break;
+        case '%': resultat = modulo(num1, num2); break;
+        case '&': resultat = et(num1, num2); break;
+        case '|': resultat = ou(num1, num2); break;
+        case '~': resultat = negation(num1, num2); break;
         default:
-            fprintf(stderr, "Operateur inconnu.\n");
+            fprintf(stderr, "Erreur : operateur inconnu.\n");
             return;
     }
 
-    printf("Resultat : %d\n", resultat);
+    printf("\nRésultat : %d\n", resultat);
 }
+
 
 void exercice_4_2(void) {
     int choix;
